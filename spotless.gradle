@@ -3,7 +3,11 @@ spotless {
     ratchetFrom 'origin/develop'
 
     kotlin {
-        target '**/*.kt'
+        target("**/*.kt")
+        targetExclude("$buildDir/**/*.kt")
+        targetExclude("bin/**/*.kt")
         ktlint("0.48.2").setEditorConfigPath("${project.rootDir}/spotless/.editorconfig")
+       // licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
     }
+
 }
