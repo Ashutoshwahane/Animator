@@ -1,0 +1,8 @@
+root = true
+
+[*.{kt,kts}]
+indent_size = 4
+indent_style = tab
+ktlint_code_style = android
+max_line_length = 150
+ktlint_ignore_back_ticked_identifier = true

@@ -1,0 +1,9 @@
+spotless {
+    // optional: limit format enforcement to just the files changed by new branch
+    ratchetFrom 'origin/develop'
+
+    kotlin {
+        target '**/*.kt'
+        ktlint("0.48.2").setEditorConfigPath("${project.rootDir}/spotless/.editorconfig")
+    }
+}
