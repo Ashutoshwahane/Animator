@@ -51,6 +51,9 @@ HeartBeatCompose is a Jetpack Compose function that creates a heartbeat animatio
 fun HeartBeatCompose(modifier: Modifier = Modifier, content: @Composable () -> Unit)
 ```
 
+## 🍻 Contribute 
+
+Contribution Guideline [contribution guidelines](CONTRIBUTING.md).
 
 ## If you find this library helpful :heart:
 show some love and Support __[Animator](https://github.com/ashutoshwahane/Animator)__ . :star: <br>
