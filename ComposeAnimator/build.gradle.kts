@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("org.jetbrains.dokka")
+    id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -56,6 +57,18 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.animation.core.android)
     implementation(libs.androidx.foundation.layout.android)
+}
 
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.ashutoshwahane"
+            artifactId = "Animator"
+            version = "0.1-beta"
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }

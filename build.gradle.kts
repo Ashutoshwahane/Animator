@@ -21,6 +21,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.androidLibrary) apply false
     id("com.diffplug.spotless") version "6.24.0"
+    id("com.vanniktech.maven.publish") version "0.27.0" apply false
 }
 
 apply(from = "${rootProject.projectDir}/spotless.gradle")
