@@ -63,8 +63,8 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.ashutoshwahane"
-            artifactId = "Animator"
-            version = "0.2-beta"
+            artifactId = "ComposeAnimator"
+            version = "0.3-beta"
 
             afterEvaluate {
                 from(components["release"])
