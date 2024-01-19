@@ -21,6 +21,6 @@ jobs:
           cache-read-only: true
           arguments: dokkaHtml
 
-      - uses: JamesIves/github-pages-deploy-action@v4
+      - uses: Ashutoshwahane/github-pages-deploy-action@v4
         with:
           folder: build/dokkaHtml
