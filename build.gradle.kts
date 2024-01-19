@@ -1,3 +1,6 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -18,13 +21,9 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.androidLibrary) apply false
     id("com.diffplug.spotless") version "6.24.0"
-
-    kotlin("jvm") version "1.3.70"
-    `maven-publish`
 }
 
 apply(from = "${rootProject.projectDir}/spotless.gradle")
-
 
 
 
