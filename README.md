@@ -36,8 +36,10 @@ Now In build.gradle.kts include this dependency
 BouncyCompose is a Jetpack Compose function that creates a bouncing animation effect for a provided content within a Compose UI. The animation simulates the movement of an element within a defined screen area, bouncing back when reaching the boundaries.
 
 ```kotlin
-@Composable
-fun BouncyCompose(
+val local = LocalConfiguration.current
+val xWidth = local.screenWidthDp.dp
+val xHeight = local.screenHeightDp.dp
+BouncyCompose(
     modifier: Modifier = Modifier, 
     screenWidth: Dp = Dp(300f), 
     screenHeight: Dp = Dp(500f), 
@@ -50,8 +52,24 @@ fun BouncyCompose(
 
 HeartBeatCompose is a Jetpack Compose function that creates a heartbeat animation effect for a provided content within a Compose UI. The animation simulates the pulsation of an element, expanding and contracting in size.
 ```kotlin
-@Composable
-fun HeartBeatCompose(modifier: Modifier = Modifier, content: @Composable () -> Unit)
+val local = LocalConfiguration.current
+val xWidth = local.screenWidthDp.dp
+val xHeight = local.screenHeightDp.dp
+HeartBeatCompose(modifier: Modifier = Modifier, content: @Composable () -> Unit)
+```
+
+
+CircularProgressCTA is a Jetpack Compose function that creates a button with dynamic width and height transitions, along with optional circular progress and completion check mark animations.
+```kotlin
+val local = LocalConfiguration.current
+val xWidth = local.screenWidthDp.dp
+CircularProgressCTA(
+    buttonWidth = xWidth,
+    isCompleted = false,
+    drawableResource = R.drawable.ic_checked_circle
+    ){
+        // Handle CTA Click
+    }
 ```
 
 ## 🍻 Contribute 
