@@ -60,10 +60,9 @@ fun BouncyCompose(
     modifier: Modifier = Modifier,
     screenWidth: Dp = Dp(300f),
     screenHeight: Dp = Dp(500f),
-    content: @Composable () -> Unit,
     speedXPosition: Float = 2f,
-    speedYPosition: Float = 2f
-
+    speedYPosition: Float = 2f,
+    content: @Composable () -> Unit
 ) {
 
     // Mutable state for X,Y positions and animation
