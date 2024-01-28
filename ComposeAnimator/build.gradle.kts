@@ -64,7 +64,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.ashutoshwahane"
             artifactId = "ComposeAnimator"
-            version = "0.3-beta"
+            version = "0.4-beta"
 
             afterEvaluate {
                 from(components["release"])
