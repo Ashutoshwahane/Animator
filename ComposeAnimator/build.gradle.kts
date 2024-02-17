@@ -57,6 +57,8 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.animation.core.android)
     implementation(libs.androidx.foundation.layout.android)
+
+
 }
 
 publishing {

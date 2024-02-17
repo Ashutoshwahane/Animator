@@ -68,4 +68,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(":ComposeAnimator"))
+
+    //icons-extended
+    implementation("androidx.compose.material:material-icons-extended:1.6.1")
+
+    //navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    //System UI controller
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
 }
