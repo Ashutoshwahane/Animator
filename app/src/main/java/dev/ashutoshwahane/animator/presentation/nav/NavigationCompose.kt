@@ -14,6 +14,7 @@ import dev.ashutoshwahane.animator.presentation.animation_screens.HeartBeatAnima
 import dev.ashutoshwahane.animator.presentation.main.MainScreen
 
 
+// main navigation host
 @Composable
 fun NavigationCompose(paddingValues: PaddingValues) {
 
