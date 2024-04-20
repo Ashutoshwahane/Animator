@@ -11,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import dev.ashutoshwahane.animator.presentation.animation_screens.BouncyAnimation
 import dev.ashutoshwahane.animator.presentation.animation_screens.CircularProgressAnimation
 import dev.ashutoshwahane.animator.presentation.animation_screens.HeartBeatAnimation
+import dev.ashutoshwahane.animator.presentation.animation_screens.slider.SliderAnimation
 import dev.ashutoshwahane.animator.presentation.main.MainScreen
 
 
@@ -33,6 +34,9 @@ fun NavigationCompose(paddingValues: PaddingValues) {
             }
             composable("HeartBeatAnimation") {
                 HeartBeatAnimation()
+            }
+            composable("SliderAnimation") {
+                SliderAnimation()
             }
 
 
