@@ -1,15 +1,11 @@
-package dev.ashutoshwahane.animator.presentation.animation_screens.slider
+package dev.ashutoshwahane.composeanimator
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -21,9 +17,6 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FractionalThreshold
 import androidx.compose.material.SwipeProgress
 import androidx.compose.material.SwipeableDefaults
-import androidx.compose.material.SwipeableState
-import androidx.compose.material.rememberSwipeableState
-import androidx.compose.material.swipeable
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -32,7 +25,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -44,24 +36,46 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
-import dev.ashutoshwahane.animator.R
-import dev.ashutoshwahane.animator.ui.theme.AnimatorTheme
 import kotlin.math.roundToInt
+import androidx.compose.material.SwipeableState
+import androidx.compose.material.rememberSwipeableState
+import androidx.compose.material.swipeable
 
+/**
+ * [UnlockSlider] is a Jetpack Compose function that creates a Swipe Slider animation effect
+ * for a provided content within a Compose UI. The animation simulates swiping from start to end
+ * with swiping effect
+ *
+ * @param isLoading Boolean for showing the loader or other icon when swiping is completed
+ * @param onSwipeComplete The callback lambda to be invoked when swiping is completed.
+ * @param modifier Modifier for styling and layout customization.
+ * @param startIcon Slider Icon which remains, and only changes when swiping is completed
+ * @param endIcon Slider Icon which is shown only when swiping is completed, default is Circular progress bar
+ * @param completionColor Slider track color which is transitioned as it's complete, and completely changes when slider swiping is completed, default color is Yellow
+ * @param initialColor Initial Color for slider track which is transits as slider is swiped to its completeion color
+ *
+ * Usage:
+ * ```
+ * UnlockSlider(isLoading = false, onSwipeComplete = {
+ *                 // onCTAClick -> code
+ *             },
+ *                 startIcon = painterResource(id = R.drawable.ArrowRight),
+ *             )
+ * ```
+ *
+ */
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun UnlockSlider(
     isLoading: Boolean,
-    onUnlockRequested: () -> Unit,
+    onSwipeComplete: () -> Unit,
     modifier: Modifier = Modifier,
     startIcon: Painter,
     endIcon: Painter? = null,
-    completionColor: Color,
+    completionColor: Color? = null,
     initialColor: Color? = null
 ) {
     val hapticFeedback = LocalHapticFeedback.current
@@ -70,7 +84,7 @@ fun UnlockSlider(
         confirmStateChange = { anchor ->
             if (anchor == Anchor.End) {
                 hapticFeedback.performHapticFeedback(HapticFeedbackType.LongPress)
-                onUnlockRequested()
+                onSwipeComplete()
             }
             true
         }
@@ -212,7 +226,7 @@ fun Track(
     swipeFraction: Float,
     enabled: Boolean,
     modifier: Modifier = Modifier,
-    completionColor: Color,
+    completionColor: Color?,
     initialColor: Color?,
     content: @Composable (BoxScope.() -> Unit),
 ) {
@@ -239,7 +253,7 @@ fun Track(
         derivedStateOf {
             calculateTrackColor(
                 swipeFraction = swipeFraction,
-                completionColor = completionColor,
+                completionColor = completionColor ?: Color.Yellow,
                 initialColor = initialColor ?: Color.Black
             )
         }
@@ -273,40 +287,4 @@ fun Track(
             ),
         content = content,
     )
-}
-
-
-@Preview
-@Composable
-private fun Preview() {
-    val previewBackgroundColor = Color(0xFFEDEDED)
-    var isLoading by remember { mutableStateOf(false) }
-    AnimatorTheme {
-        val spacing = 88.dp
-        Column(
-            verticalArrangement = Arrangement.Absolute.spacedBy(8.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxSize()
-                .background(previewBackgroundColor)
-                .padding(horizontal = 24.dp),
-        ) {
-            Spacer(modifier = Modifier.height(spacing))
-
-
-
-            UnlockSlider(
-                isLoading = isLoading,
-                onUnlockRequested = { isLoading = true },
-                startIcon = painterResource(id = R.drawable.ic_heart),
-                completionColor = Color.Blue,
-                endIcon = null,
-                initialColor = Color.Black
-            )
-            Spacer(modifier = Modifier.weight(1f))
-
-
-            Spacer(modifier = Modifier.height(16.dp))
-        }
-    }
 }

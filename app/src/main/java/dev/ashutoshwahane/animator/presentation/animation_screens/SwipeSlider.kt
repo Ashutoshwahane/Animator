@@ -1,4 +1,4 @@
-package dev.ashutoshwahane.animator.presentation.animation_screens.slider
+package dev.ashutoshwahane.animator.presentation.animation_screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import dev.ashutoshwahane.animator.R
+import dev.ashutoshwahane.composeanimator.UnlockSlider
 import kotlinx.coroutines.launch
 
 
@@ -76,13 +77,10 @@ fun SwipeStatic(snackbarHostState: SnackbarHostState,onSwipeCta: () -> Unit,isLo
                 .fillMaxSize()
                 .padding(contentPadding)
         ) {
-            UnlockSlider(isLoading = isLoading, onUnlockRequested = {
+            UnlockSlider(isLoading = isLoading, onSwipeComplete = {
                 onSwipeCta.invoke()
             },
                 startIcon = painterResource(id = R.drawable.ic_heart),
-                completionColor = Color.Blue,
-                endIcon = painterResource(id = R.drawable.icon_butterfly),
-                initialColor = Color.Red
             )
 
 

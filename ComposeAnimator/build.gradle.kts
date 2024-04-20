@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.androidx.animation.core.android)
     implementation(libs.androidx.foundation.layout.android)
 
+    implementation(libs.material)
+
 
 }
 

@@ -12,7 +12,7 @@ import dev.ashutoshwahane.animator.presentation.animation_screens.BouncyAnimatio
 import dev.ashutoshwahane.animator.presentation.animation_screens.CircularProgressAnimation
 import dev.ashutoshwahane.animator.presentation.animation_screens.HeartBeatAnimation
 import dev.ashutoshwahane.animator.presentation.animation_screens.colorslider.SliderAnimation
-import dev.ashutoshwahane.animator.presentation.animation_screens.slider.SwipeSlider
+import dev.ashutoshwahane.animator.presentation.animation_screens.SwipeSlider
 import dev.ashutoshwahane.animator.presentation.main.MainScreen
 
 
