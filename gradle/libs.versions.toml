@@ -23,6 +23,7 @@ spotlessPluginGradle = "6.24.0"
 android-documentation-plugin = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaGradlePlugin" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+material = { group = "androidx.compose.material", name = "material" }
 androidx-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "runtime" }
 dokka-gradle-plugin = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokkaGradlePlugin" }
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }

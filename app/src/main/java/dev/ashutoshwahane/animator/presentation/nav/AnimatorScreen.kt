@@ -13,4 +13,5 @@ val AnimatorScreens = listOf(
     AnimatorScreen(route = "CircularProgressAnimation",title = "Circular Progress Animation"),
     AnimatorScreen(route = "HeartBeatAnimation", title = "HeartBeatAnimation"),
     AnimatorScreen(route = "SliderAnimation", title = "Slider Animation"),
+    AnimatorScreen(route = "SwipeSlider", title = "Swipe Slider"),
 )
