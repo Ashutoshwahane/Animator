@@ -73,6 +73,7 @@ fun UnlockSlider(
     isLoading: Boolean,
     onSwipeComplete: () -> Unit,
     modifier: Modifier = Modifier,
+    hintText:String? = "",
     startIcon: Painter,
     endIcon: Painter? = null,
     completionColor: Color? = null,
@@ -107,13 +108,15 @@ fun UnlockSlider(
         initialColor = initialColor
     ) {
 
-        Hint(
-            text = "Swipe to unlock reward",
-            swipeFraction = swipeFraction,
-            modifier = Modifier
-                .align(Alignment.Center)
-                .padding(PaddingValues(horizontal = Thumb.Size + 8.dp)),
-        )
+        if (hintText != null) {
+            Hint(
+                text = hintText,
+                swipeFraction = swipeFraction,
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(PaddingValues(horizontal = Thumb.Size + 8.dp)),
+            )
+        }
 
         SwipeIcon(
             isLoading = isLoading,
@@ -121,14 +124,13 @@ fun UnlockSlider(
                 IntOffset(swipeState.offset.value.roundToInt(), 0)
             },
             startIcon = startIcon,
-            endIcon = if (endIcon != null) {
-                endIcon
-            } else {
-                null
-            }
+            endIcon = endIcon
         )
     }
 }
+
+
+
 
 @OptIn(ExperimentalMaterialApi::class)
 fun calculateSwipeFraction(progress: SwipeProgress<Anchor>): Float {
@@ -141,7 +143,7 @@ fun calculateSwipeFraction(progress: SwipeProgress<Anchor>): Float {
     }
 }
 
-enum class Anchor { Start, End }
+enum class Anchor { Start, End,Middle }
 
 
 fun calculateTrackColor(swipeFraction: Float, completionColor: Color, initialColor: Color): Color {
@@ -288,3 +290,4 @@ fun Track(
         content = content,
     )
 }
+
