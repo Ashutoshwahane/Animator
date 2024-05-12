@@ -123,8 +123,9 @@ fun CircularProgressCTA(
 			Text(
 				text = ctaText,
 				style = ctaTextStyle,
-				modifier = Modifier.fillMaxWidth(),
-				textAlign = TextAlign.Center
+				modifier = Modifier.fillMaxWidth()
+					.padding(4.dp),
+				textAlign = TextAlign.Center,
 			)
 		}
 		AnimatedVisibility(width == 50.dp && !isCompleted) {

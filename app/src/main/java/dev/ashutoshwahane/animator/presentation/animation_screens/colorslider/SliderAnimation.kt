@@ -39,10 +39,7 @@ fun SliderAnimation() {
         modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
-
         ColorChangingBackgroundSlider()
-
     }
 
 
