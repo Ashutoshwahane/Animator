@@ -7,6 +7,9 @@
 <img src="https://github.com/Ashutoshwahane/Animator/assets/50887729/f27084c0-06c7-4bb5-bd5d-af028cb133ba" width="280"/>
 <img src="https://github.com/Ashutoshwahane/Animator/assets/50887729/48120376-71e6-4674-b4b2-04751af47b6f" width="280"/>
 <img src="https://github.com/Ashutoshwahane/Animator/assets/50887729/dbce2ac3-fac4-4184-8acc-14f780b8a8d8" width="280"/>
+<img src="https://raw.githubusercontent.com/yeshuwahane/Animator/main/screenshots/swipeanimation.gif" width="280"/>
+
+
 
 </p>
 
