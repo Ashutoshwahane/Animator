@@ -78,4 +78,6 @@ dependencies {
 
     //System UI controller
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.28.0")
+
+
 }

@@ -9,7 +9,11 @@
 <img src="https://github.com/Ashutoshwahane/Animator/assets/50887729/dbce2ac3-fac4-4184-8acc-14f780b8a8d8" width="280"/>
 <img src="https://raw.githubusercontent.com/yeshuwahane/Animator/main/screenshots/swipeanimation.gif" width="280"/>
 
+<img src="https://raw.githubusercontent.com/yeshuwahane/Animator/refs/heads/main/screenshots/typewriterBUtton.gif" width="280"/>
 
+<img src="https://raw.githubusercontent.com/yeshuwahane/Animator/refs/heads/main/screenshots/parallaxButton.gif" width="280"/>
+
+<img src="https://raw.githubusercontent.com/yeshuwahane/Animator/refs/heads/main/screenshots/keypadButton.gif" width="280"/>
 
 </p>
 
@@ -91,6 +95,63 @@ UnlockSlider(
 
             )
 ```
+
+
+Button looks and have effect like Typewriter button. With built-in lambda functions, you can effortlessly integrate custom actions or code snippets
+
+```kotlin
+AdjacentButton(
+            buttonText = "Submit",
+            buttonWidth = 200.dp,
+            buttonColor = Color.Gray, // Custom purple color
+            textColor = Color.Black, // Custom white text color,
+            buttonForegroundColor = Color.White
+        ) {
+            println("Button clicked!")
+        }
+```
+
+
+Button with shimmer effect, where you can select color for shimmer with three colors . With built-in lambda functions, you can effortlessly integrate custom actions or code snippets
+
+```kotlin
+ShimmerButton(
+            text = "Play now →",
+            onClick = { /* Handle button click */ },
+            shimmerColors = listOf(Color.White, Color.Gray, Color.White),
+            shadowColor = Color.DarkGray
+        )
+```
+
+
+Button like keyboard button . With built-in lambda functions, you can effortlessly integrate custom actions or code snippets
+
+```kotlin
+ElevatedButton(
+            text = "Pay Now",
+            onClick = { /* Handle the click event */ },
+            buttonColor = Color.White,
+            borderColor = Color.Gray,
+            textColor = Color.Black
+        )
+```
+
+
+
+Button animation like keypad . With built-in lambda functions, you can effortlessly integrate custom actions or code snippets
+
+```kotlin
+KeypadButton(
+            text = "Submit",
+            buttonColor = Color.White,
+            shadowColor = Color.LightGray,
+            borderColor = Color.Gray, // Custom border color
+            onClick = {
+                //CTA Login
+            }
+        )
+```
+
 
 
 
